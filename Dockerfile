@@ -69,7 +69,7 @@ RUN wget https://github.com/gcla/termshark/releases/download/v${TERMSHARK_VERSIO
     mv termshark_${TERMSHARK_VERSION}_linux_x64/termshark /usr/local/bin/termshark && \
     chmod +x /usr/local/bin/termshark
 
-
+RUN rm -rf /termshark_2.1.1_linux_x64
 # Settings
 ADD motd /etc/motd
 ADD profile  /etc/profile
