@@ -13,6 +13,12 @@ func main() {
 		})
 	})
 
+	r.GET("/headers", func(c *gin.Context) {
 
-	r.Run()
+		c.JSON(200, gin.H{
+			"header": c.Request.Header,
+		})
+	})
+
+	r.Run(":8080")
 }
