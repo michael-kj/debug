@@ -1,0 +1,13 @@
+language: go
+go:
+  - "1.15"
+services:
+  - docker
+
+
+install:
+  - make images
+
+script:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin registry.cn-shanghai.aliyuncs.com
+  - make push
