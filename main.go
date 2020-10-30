@@ -3,13 +3,15 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/kirinlabs/HttpRequest"
+	"os"
 )
 
 func main() {
 	r := gin.Default()
 	r.GET("/ping", func(c *gin.Context) {
+		host, _ := os.Hostname()
 		c.JSON(200, gin.H{
-			"message": "pong",
+			"message": host,
 		})
 	})
 
